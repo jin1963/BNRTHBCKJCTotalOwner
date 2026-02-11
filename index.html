@@ -1,0 +1,118 @@
+<!doctype html>
+<html lang="th">
+<head>
+  <meta charset="utf-8" />
+  <meta name="viewport" content="width=device-width,initial-scale=1" />
+  <title>KJC/THBC - Package DApp (CoreV4)</title>
+  <link rel="stylesheet" href="style.css" />
+  <script src="https://cdn.jsdelivr.net/npm/ethers@6.13.2/dist/ethers.umd.min.js"></script>
+  <script src="config.js"></script>
+  <script defer src="app.js"></script>
+</head>
+<body>
+<div class="wrap">
+  <h1>● KJC/THBC – Package DApp</h1>
+
+  <div class="topbar">
+    <div class="row">
+      <button class="btn" id="btnConnect">Connect</button>
+      <span class="pill mono" id="wallet">-</span>
+      <span class="pill">chainId: <span id="chainBadge">-</span></span>
+      <span id="bscLink"></span>
+    </div>
+
+    <div class="row">
+      <span class="pill mono">CORE: <span id="coreAddr">-</span></span>
+      <span id="coreScan"></span>
+    </div>
+  </div>
+
+  <div class="grid two">
+    <div class="card">
+      <label>Package</label>
+      <select id="pkg"></select>
+
+      <div class="grid two">
+        <div>
+          <label>Side</label>
+          <select id="side">
+            <option value="L">Left</option>
+            <option value="R">Right</option>
+          </select>
+        </div>
+        <div>
+          <label>Sponsor</label>
+          <input id="sponsor" placeholder="0x..." />
+        </div>
+      </div>
+
+      <div class="row" style="margin-top:10px">
+        <button class="btn gray" id="btnApprove">Approve USDT</button>
+        <button class="btn" id="btnBuy">Buy</button>
+        <button class="btn gray" id="btnRefresh">Refresh</button>
+      </div>
+
+      <hr/>
+
+      <div class="kv">
+        <div class="muted">USDT Balance</div><div class="mono" id="usdtBal">-</div>
+        <div class="muted">USDT Allowance</div><div class="mono" id="usdtAlw">-</div>
+      </div>
+
+      <hr/>
+
+      <div class="kv">
+        <div class="muted">My Rank</div><div class="mono" id="myRank">-</div>
+        <div class="muted">Status</div><div class="mono" id="myStatus">-</div>
+        <div class="muted">My Stakes Count</div><div class="mono" id="stakeCount">-</div>
+      </div>
+    </div>
+
+    <div class="card">
+      <div class="row" style="justify-content:space-between">
+        <div class="pill">Earnings</div>
+        <div class="pill">Withdrawable: <span class="mono" id="withdrawable">-</span></div>
+      </div>
+
+      <div class="grid two" style="margin-top:10px">
+        <div>
+          <label>Accrued Ref</label>
+          <div class="pill mono" id="accrRef">-</div>
+        </div>
+        <div>
+          <label>Accrued Match</label>
+          <div class="pill mono" id="accrMatch">-</div>
+        </div>
+      </div>
+
+      <div class="grid two" style="margin-top:10px">
+        <div>
+          <label>Claim Referral Amount (USDT)</label>
+          <input id="claimRefAmt" placeholder="เช่น 10" />
+          <button class="btn gray" style="width:100%;margin-top:8px" id="btnClaimRef">Claim Referral</button>
+        </div>
+        <div>
+          <label>Claim Matching Amount (USDT)</label>
+          <input id="claimMatchAmt" placeholder="เช่น 5" />
+          <button class="btn gray" style="width:100%;margin-top:8px" id="btnClaimMatch">Claim Matching</button>
+        </div>
+      </div>
+
+      <hr/>
+
+      <label>My Referral Link</label>
+      <div class="pill mono" id="myRefLink" style="word-break:break-all">-</div>
+
+      <div class="row" style="margin-top:10px">
+        <button class="btn gray" id="btnCopyLeft">Copy LEFT</button>
+        <button class="btn gray" id="btnCopyRight">Copy RIGHT</button>
+        <button class="btn gray" id="btnCopyAddr">Copy Address</button>
+      </div>
+
+      <div class="status muted" id="status" style="margin-top:10px">-</div>
+    </div>
+  </div>
+
+</div>
+</body>
+</html>
